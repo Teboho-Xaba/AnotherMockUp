@@ -1,0 +1,119 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #222;
+    background-color: #ddd;
+    padding: 30px 2rem;
+}
+
+header .logo {
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: 800;
+}
+
+header .nav a {
+    color: #222;
+    text-decoration: none;
+    padding: 2px 16px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+header .nav a:hover {
+    background-color: #222;
+    color: #eee;
+}
+
+header .nav a:not(:last-child){
+    margin-right: 2rem;
+}
+
+label{
+    display: none;
+}
+
+#check {
+    z-index: 10;
+    display: none;
+}
+
+.card {
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: #aaa;
+    color: #111;
+    opacity: 0.8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 960px) {
+    header .nav {
+        display: none;
+    }
+
+    label {
+        display: block;
+        font-size: 32px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        transition-property: color;
+    }
+
+    label:hover{
+        color: #111;
+    }
+
+    label .close-btn {
+        display: none;
+    }
+
+    #check:checked ~ header .navi {
+        z-index: 2;
+        position: fixed;
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    #check:checked ~ header .navi a {
+        font-weight: 700;
+        margin: 26px 0;
+        letter-spacing: 2px;
+    }
+
+    #check:checked ~ header label .menu-btn {
+        display: none;
+    }
+
+    #check:checked ~ header label .close-btn{
+        z-index: 2;
+        display: block;
+        position: fixed;
+    }
+
+    label .menu-btn {
+        position: absolute;
+    }
+}
